@@ -112,9 +112,9 @@ class CjkSpaceTreeProcessor(markdown.treeprocessors.Treeprocessor):
 
         for e in root.iter():
             if e.text and e.tag in INSIDE_ELEMENTS:
-                e.text = _auto_spacing(e.text)
+                e.text = _auto_spacing(e.text) + ' '
             if e.tail:
-                e.tail = _auto_spacing(e.tail)
+                e.tail = _auto_spacing(e.tail) + ' '
         return(root)
 
 
